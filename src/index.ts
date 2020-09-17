@@ -1,8 +1,5 @@
-import {
-  html,
-  component,
-  useState,
-} from "https://unpkg.com/haunted/haunted.js";
+import { html, component, useState } from "haunted";
+
 import "./FullName.js";
 
 function App() {
@@ -15,7 +12,7 @@ function App() {
 
     <fieldset>
       <legend>Change name:</legend>
-      <full-name @change=${ev => setName(ev.detail)}></full-name>
+      <full-name @change=${(ev) => setName(ev.detail)}></full-name>
     </fieldset>
 
     <style>

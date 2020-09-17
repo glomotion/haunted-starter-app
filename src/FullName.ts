@@ -3,7 +3,7 @@ import {
   component,
   useState,
   useEffect
-} from "https://unpkg.com/haunted/haunted.js";
+} from "haunted";
 
 function FullName(el) {
   const [first, setFirst] = useState("Happy");
