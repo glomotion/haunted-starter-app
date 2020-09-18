@@ -1,6 +1,8 @@
-import { useState, useEffect } from "haunted";
+import { useState, useEffect, useRef } from "haunted";
 import { css, html } from 'lit-element';
+
 import { componentWithHooks } from './with-hooks';
+import { domRef } from './directives';
 
 const styles = css`
   :host {
@@ -19,9 +21,10 @@ const styles = css`
   }
 `;
 
-function FullName(el) {
+function FullName() {
   const [first, setFirst] = useState("Happy");
   const [last, setLast] = useState("Halloween 🎃");
+  const containerRef = useRef(null);
 
   useEffect(() => {
     const event = new CustomEvent("change", {
@@ -30,8 +33,12 @@ function FullName(el) {
     this.dispatchEvent(event);
   }, [first, last]);
 
+  useEffect(() => {
+    console.log('@@@@@@@@@@@@', containerRef);
+  }, [containerRef]);
+
   return html`
-    <div class="container">
+    <div class="container" ?domRef=${domRef(containerRef)}>
       <label for="first-name">First</label>
       <input
         value=${first}

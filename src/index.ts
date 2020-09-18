@@ -1,6 +1,7 @@
-import { html, component, useState } from "haunted";
-import { componentWithHooks } from './with-hooks';
+import { useState } from "haunted";
+import { html } from 'lit-element';
 
+import { componentWithHooks } from './with-hooks';
 import "./style.css";
 import "./FullName";
 
