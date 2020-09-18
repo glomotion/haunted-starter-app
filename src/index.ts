@@ -1,13 +1,14 @@
 import { html, component, useState } from "haunted";
+import { componentWithHooks } from './with-hooks';
 
-import "./FullName.js";
+import "./style.css";
+import "./FullName";
 
 function App() {
   const [name, setName] = useState("");
 
   return html`
     <h2>User Page</h2>
-
     <h3>${name}</h3>
 
     <fieldset>
@@ -28,4 +29,4 @@ function App() {
   `;
 }
 
-customElements.define("my-app", component(App));
+customElements.define("my-app", componentWithHooks({ renderer: App }));
