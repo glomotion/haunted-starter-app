@@ -5,7 +5,9 @@
   "main": "index.html",
   "scripts": {
     "start": "webpack-dev-server --config ./webpack.dev.config.js",
-    "build": "webpack --config ./webpack.config.js"
+    "build": "webpack --config ./webpack.config.js",
+    "predeploy": "yarn build; cp ./CNAME ./dist/;",
+    "deploy": "npx surge"
   },
   "dependencies": {
     "haunted": "^4.7.0",
