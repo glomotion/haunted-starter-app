@@ -1,4 +1,4 @@
-import { useState } from "haunted";
+import { useState, component } from "haunted";
 import { html, LitElement } from 'lit-element';
 
 import "./style.css";
@@ -30,4 +30,4 @@ function App() {
   `;
 }
 
-customElements.define("my-app", App);
+customElements.define("my-app", component(App));
