@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack-dev-server --config ./webpack.dev.config.js",
     "build": "webpack --config ./webpack.config.js",
-    "predeploy": "yarn build; cp ./CNAME ./dist/;",
+    "predeploy": "yarn build; cp ./src/CNAME ./dist/;",
     "deploy": "npx surge"
   },
   "dependencies": {
